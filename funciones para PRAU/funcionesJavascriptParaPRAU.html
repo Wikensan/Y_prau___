@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+
+<script>                    // PUEDES ADAPTAR LA ANIMACIÓN A TU GUSTO
+
+var angulo = 0;
+var angMax = 6;             // MODIFICA EL ÁNGULO PARA GIRAR MÁS O MENOS  !!!!!
+    
+var dextrogiro = true;      // COMIENZA COMO EL RELOJ
+var borracho;               // será la función de giro y su valor
+var boton;                  // identificará el botón que debe girar
+var lapso;                  // será el ciclo de giro, no haría falta declararla, pero no me fío
+
+function rollete(x){        // recoge la varible (x) para identificar el botón y genera un ciclo eterno
+	boton = x;
+	lapso = setInterval(anima, 10);     // CAMBIA EL VALOR PARA ACELERAR O RALENTIZAR   !!!!!
+}
+
+function anima(){                       // SE REPITE CON LA FRECUENCIA AJUSTADA EN LAPSO
+	if (dextrogiro == true) {
+		angulo = angulo + 1;          // SI TIENE QUE GIRAR COMO EL RELOJ, AUMENTA EL ÁNGULO
+		if (angulo == angMax) {
+			dextrogiro = false;       // CUANDO LLEGA AL MÁXIMO DA LA VUELTA
+		}
+	}
+	else{
+		angulo = angulo - 1;          // SI TIENE QUE GIRAR CONTRA EL RELOJ, REDUCE EL ÁNGULO
+		if (angulo == -1*angMax) {
+			dextrogiro = true;        // CUANDO LLEGA AL MÍNIMO DA LA VUELTA
+		}
+	}
+	borracho = "rotate("+angulo+"deg)";                            // funciones en campos de texto (flipo)
+	document.getElementById(boton).style.transform = borracho;     // style.transform es CSS
+}
+
+function borraRollete(y){     // recoge la varible (y) para identificar el botón y detiene el ciclo
+	boton =y;
+	document.getElementById(boton).style.transform =  "rotate(0deg)"      // lo deja bien colocadito
+	clearInterval(lapso);      // borra el ciclo eterno
+    //angulo = 0;            // si se 'COMENTA' EL ÁNGULO SE HEREDA (solo se nota con ángulos grandes)
+    //dextrogiro = true;     // si se 'COMENTA' LA DIRECCIÓN SE HEREDA (solo se nota con ángulos grandes)
+}
+
+</script>
+
+</head>
+    
+    
+
+<body>
+    
+    <!-- EN EL HTML EL LINK LO HE PUESTO COMO SIEMPRE, EN UNA ETIQUETA <a href=""/> PERO PODRÍA IR EN LAS FUNCIONES javaScript INSERTADAS PARA HACER EL HOVER (onmouseover, onmouseout, onmousedown y onmouseup), QUE SOLO EN ESTE CASO SE ESCRIBEN SIN camelCase Y SIN LA ETIQUETA <script>.
+
+    EN ESTAS FUNCIONES HAY DOS COMPORTAMIENTOS SEPARADOS POR PUNTO Y COMA (Y AMBOS COMO TEXTO ENTRE COMILLAS): EL CAMBIO DE ARCHIVO DE IMAGEN (src) DEL PROPIO ELEMENTO (this) -SIN DEFINIR CARPETA (src='img/boton...') PORQUE LOS ARCHIVOS DE IMAGEN LOS HE METIDO A SACO-, Y LAS FUNCIONES DE MOVIMIENTO, rollete() PARA INICIAR LA ANIMACIÓN Y borraRollete() PARA DESACTIVARLA.
+
+    ADEMÁS EN ESAS FUNCIONES HAY QUE INSERTAR EL id DEL div QUE SE QUIERE ANIMAR O PARAR, PARA QUE LAS FUNCIONES PUEDAN IDENTIFICAR QUÉ BOTÓN ES EL QUE DEBEN ANIMAR.
+    COMO SIEMPRE HAY QUE PRESTAR ATENCIÓN A LA COMBINACIÓN DE COMILLAS SIMPLES Y DOBLES -->
+
+<div id="botonPrestamos" style="position:absolute; left:50px; top:150px; z-index: 3;"><a href="reservas.html" /><img src="botonPrestamos1.png" onmouseover="this.src= 'botonPrestamos2.png'; rollete('botonPrestamos')" onmouseout="this.src= 'botonPrestamos1.png'; borraRollete('botonPrestamos')" onmousedown="this.src= 'botonPrestamos1.png'; borraRollete('botonPrestamos')" onmouseup="this.src='botonPrestamos2.png'; borraRollete('botonPrestamos')" /></div>
+
+
+<div id="botonDevoluciones" style="position:absolute; left:50px; top:250px; z-index: 3;"><a href="reservas.html" /><img src="botonDevoluciones1.png" onmouseover="this.src= 'botonDevoluciones2.png'; rollete('botonDevoluciones')" onmouseout="this.src= 'botonDevoluciones1.png'; borraRollete('botonDevoluciones')" onmousedown="this.src= 'botonDevoluciones1.png'; borraRollete('botonDevoluciones')" onmouseup="this.src='botonDevoluciones2.png'; borraRollete('botonDevoluciones')" /></div>
+
+
+<div id="botonReservas" style="position:absolute; left:50px; top:350px; z-index: 3;"><a href="reservas.html" /><img src="botonReservas1.png" onmouseover="this.src= 'botonReservas2.png'; rollete('botonReservas')" onmouseout="this.src= 'botonReservas1.png'; borraRollete('botonReservas')" onmousedown="this.src= 'botonReservas1.png'; borraRollete('botonReservas')" onmouseup="this.src='botonReservas2.png'; borraRollete('botonReservas')" /></div>
+
+
+<div id="botonStatus" style="position:absolute; left:50px; top:450px; z-index: 3;"><a href="reservas.html" /><img src="botonStatus1.png" onmouseover="this.src= 'botonStatus2.png'; rollete('botonStatus')" onmouseout="this.src= 'botonStatus1.png'; borraRollete('botonStatus')" onmousedown="this.src= 'botonStatus1.png'; borraRollete('botonStatus')" onmouseup="this.src='botonStatus2.png'; borraRollete('botonStatus')" /></div>
+
+
+</body>
+</html>
