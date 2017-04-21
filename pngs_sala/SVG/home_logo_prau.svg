@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="259.654px" height="178.387px" viewBox="0 0 259.654 178.387" enable-background="new 0 0 259.654 178.387"
+	 xml:space="preserve">
+<g>
+	<g>
+		<circle fill-rule="evenodd" clip-rule="evenodd" fill="#E7751E" cx="137.873" cy="17.07" r="5.958"/>
+		<g>
+			<path fill="#E7751E" d="M49.973,30.324l34.633,20.185l7.105-24.095l14.566,7.094l11.211-11.026l16.064,9.158l9.156-8.963
+				l4.857,2.988l15.695-11.396l12.895,40.912h9.158l23.17-26.897l7.841,6.908l-28.589,29.525h-20.171l-8.408-33.263l-6.725,6.54
+				l-5.236-4.486l-11.395,11.026l-15.695-8.224l-11.396,11.025l-9.34-5.041l-6.824,19.24h-4.361h-8.998L42.752,37.994
+				C45.413,30.133,48.133,29.106,49.973,30.324z"/>
+			<g>
+				<g>
+					<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#E7751E" points="147.547,27.879 152.784,32.55 160.811,26.195 
+						172.02,62.445 187.531,62.445 210.703,37.406 208.484,28.283 216.326,35.191 187.736,64.717 167.565,64.717 159.157,31.454 
+						152.432,37.994 147.196,33.508 142.211,38.332 					"/>
+					<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#E7751E" points="120.266,29.357 135.778,38.329 135.801,44.534 
+						135.797,44.523 120.106,36.312 					"/>
+					<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#E7751E" points="99.366,42.297 96.53,32.883 108.481,39.607 
+						108.709,47.336 99.366,42.297 					"/>
+				</g>
+				<path fill="#E7751E" d="M52.243,39.148l35.941,22.386l-9,0.001L42.752,37.993c4.445-13.128,9.051-7.194,9.455-3.581
+					C52.418,36.289,52.379,37.878,52.243,39.148z"/>
+			</g>
+		</g>
+	</g>
+	
+		<text transform="matrix(1 0 0 1 7.3926 138.0127)" fill="#623D39" font-family="'VarelaRound'" font-size="82.5271" letter-spacing="-3">PRAU!</text>
+	<text transform="matrix(1 0 0 1 16.1011 166.3232)" fill="#E7751E" font-family="'VarelaRound'" font-size="22.121">préstamo audiovisual</text>
+	<path fill="#623D39" d="M226.003,62.404h-3.398c-1.43,0-1.621,0-1.621-1.2V47.736c0-0.841,0-0.841,0.609-1.451l5.586-5.564
+		c0.537-0.535,0.744-0.611,0.914-0.611c0.324,0,0.365,0.036,0.994,0.668l5.623,5.528c0.576,0.554,0.555,0.554,0.611,1.47v13.332
+		c0,1.164-0.057,1.297-1.07,1.297l-3.957-0.016L226.003,62.404"/>
+</g>
+</svg>
