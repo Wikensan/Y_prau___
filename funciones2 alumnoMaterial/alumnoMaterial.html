@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+
+<script>
+
+var pasos = 0;  
+var instante;
+var sube;  
+var baja;
+var empujeSi = 0;
+var scrolleaSi = 0;
+var pixelsScroll = 0;
+    
+function empuja1(x, y){
+    sube = x;
+    baja = y;
+    empujeSi = 1;
+    empuja2();
+}
+    
+function empuja2(){        // senoidal, cuando el ángulo se acerca a 90 se va ralentizando
+    if (empujeSi == 1){
+        pasos = pasos + 1;
+        var cuanto = fondo - Math.round(1040*Math.sin(pasos*Math.PI/180));  // funcion senoidal
+        document.getElementById(sube).style.top = cuanto+"px";
+        document.getElementById(baja).style.top = (0+1048-cuanto)+"px";   // 1048, altura de los DIVs
+        if (pasos == 97){     // 7 pasos más de 90 para que vuelva a bajar un poco, a 180
+            pasos = 0;
+            empujeSi = 0;
+            clearTimeout(instante);
+        }
+    }
+    if (empujeSi == 1){                    // está aparte porque si no continua eternamente
+        instante = setTimeout(function(){ empuja2() }, 7);
+    }
+}
+
+    
+function hazScroll(){
+    scrolleaSi = 1;
+    hazScrollB();
+}
+    
+
+function hazScrollB(){
+    if (scrolleaSi == 1){
+        pixelsScroll = pixelsScroll + 5;
+        window.scrollTo(0, pixelsScroll);  
+        if (pixelsScroll >= 748){               // 748 es la altura de mi DIV, revisar al final
+            scrolleaSi = 0;
+            pixelsScroll = 0;
+            clearTimeout(temporal); 
+        }
+    }
+    if (scrolleaSi == 1){                 // está aparte porque si no continua eternamente
+        temporal = setTimeout(function(){ hazScrollB() }, 5);
+    }
+}
+
+
+</script>
+
+</head>
+
+<body>
+
+<div id="contenedor" style="position:relative; width:1920, left:auto; top:auto; z-index: 0;">
+
+	<div id="lateral" style="position:absolute; left:0px; top:0px; z-index: 1;"><img src="lateral.jpg" /></div>
+    
+	<div id="loginAlumno" style="position:absolute; left:417px; top:0px; z-index: 2;"><img src= "loginAlumno.jpg" /></div>
+    
+    <div id="footer" style="position:absolute; left:0px; top:1048px; z-index: 5;"><img src="footer.jpg" /></div>
+    
+	<div id="alumnoMaterial" style="position:absolute; left:417px; top:1048px; z-index: 3;"><img src="alumnoMaterial.jpg" /></div>
+    
+	<div id="selMaterial" style="position:absolute; left:417px; top:1048px; z-index: 4;"><img src="selMaterial.jpg" /></div>
+    
+    
+    <!--LLAMO A LA FUNCIONES DESDE DOS BOTONES, PERO EN REALIDAD DEBERÁN ESTAR ASOCIADAS AL LOGIN
+    DEL ALUMNO Y DE LOS MATERIALES-->
+    
+    
+    <div id="boton1" style="position:absolute; width:138px; height:138px; left:125px; top:376px; z-index: 6;" onmousedown="empuja1('alumnoMaterial', 'loginAlumno')"></div>
+    
+    <div id="boton2" style="position:absolute; width:138px; height:138px; left:125px; top:524px; z-index: 6;" onmousedown="hazScroll()"></div>
+
+
+</div>
+
+<script>
+var fondo = document.getElementById("footer").style.top;   // aquí porque tiene q1ue leer el HTML
+fondo = fondo.slice(-0,-2);                                // quita "px" (1048px) y deja 1048
+//console.log(fondo);
+</script>  
+    
+</body>
+</html>
